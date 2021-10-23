@@ -1,15 +1,11 @@
 ---
-- name: Test for module my_own_module
-  gather_facts: false
-  hosts: localhost
-  tasks:
-    - name: Run the testing module
-      my_own_module:
-        name: "{{ p_name }}"
-        path: "{{ p_path }}"
-        content: "{{ p_content }}"
-        force: "{{ p_force }}"
-      register: testout
-    - name: dump test output
-      debug:
-        msg: '{{ testout }}'
+  - name: Run the module my_own_module
+    my_own_module:
+      name: "{{ p_name }}"
+      path: "{{ p_path }}"
+      content: "{{ p_content }}"
+      force: false
+    register: testout
+  - name: dump test output
+    debug:
+      msg: '{{ testout }}'

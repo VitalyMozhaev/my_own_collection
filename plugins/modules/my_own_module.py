@@ -93,8 +93,6 @@ def run_module():
         changed=False,
         original_message='',
         message=''
-        #path='',
-        #content=''
     )
 
     # the AnsibleModule object will be our abstraction working with Ansible
